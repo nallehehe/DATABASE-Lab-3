@@ -1,0 +1,128 @@
+﻿<Window x:Class="Labb3_NET22.aEditQuiz"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labb3_NET22"
+        mc:Ignorable="d"
+        Title="aEditQuiz" Height="450" Width="800" Background="DarkSeaGreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="All Questions" FontWeight="Bold" FontSize="13" Grid.ColumnSpan="2" Grid.Column="8" Grid.Row="1"/>
+        <ListBox x:Name="ShowAllQuestions" Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="11" SelectionChanged="ShowAllQuestions_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Text}" FontSize="10"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Label Content="Question" 
+               FontWeight="Bold" 
+               FontSize="13" 
+               Grid.Column="4" 
+               Grid.Row="1"/>
+
+        <TextBox x:Name="QuestionTitle"
+                 Width="400"
+                 TextWrapping="Wrap"
+                 Grid.Column="2"
+                 Grid.ColumnSpan="5"
+                 Grid.Row="3"
+                 Grid.RowSpan="2"/>
+
+        <Label Content="Answers" 
+               FontWeight="Bold" 
+               FontSize="13" 
+               Grid.Column="4" 
+               Grid.Row="6"/>
+
+        <TextBox x:Name="ChangeQAnswer1"
+                 Grid.Column="3"
+                 Grid.ColumnSpan="3"
+                 Grid.Row="8"/>
+        <TextBox x:Name="ChangeQAnswer2"
+                 Grid.Column="3"
+                 Grid.ColumnSpan="3"
+                 Grid.Row="10"/>
+        <TextBox x:Name="ChangeQAnswer3"
+                 Grid.Column="3"
+                 Grid.ColumnSpan="3"
+                 Grid.Row="12"/>
+
+        <RadioButton x:Name="CorrectAnswer1"
+                  Margin="60,7,0,0"
+                  Grid.Column="2"
+                  Grid.Row="8"
+                  GroupName="CorrectAnswer"/>
+
+        <RadioButton x:Name="CorrectAnswer2"
+                  Margin="60,7,0,0"
+                  Grid.Column="2"
+                  Grid.Row="10"
+                  GroupName="CorrectAnswer"/>
+
+        <RadioButton x:Name="CorrectAnswer3"
+                  Margin="60,7,0,0"
+                  Grid.Column="2"
+                  Grid.Row="12"
+                  GroupName="CorrectAnswer"/>
+
+        <Button Content="Save Question"
+                Margin="0,0,70,0"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Grid.Row="6"
+                Click="SaveQuestion"/>
+        <Button Content="Add Question"
+                Margin="0,0,70,0"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Grid.Row="7"
+                Click="AddQuestion"/>
+        <Button Content="Remove Question"
+                Margin="0,0,70,0"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Grid.Row="8"
+                Click="RemoveQuestion"/>
+        
+        <Button Content="Back to menu"
+                Margin="0,0,70,0"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Grid.Row="12"
+                Click="ToMenu"/>
+    </Grid>
+</Window>
